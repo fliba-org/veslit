@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import MatchSelection from './match-selection';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render('hey there', document.getElementById('root'));
+ReactDOM.render(<MatchSelection />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
