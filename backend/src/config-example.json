@@ -1,0 +1,6 @@
+{
+    "hostname": "127.0.0.1",
+    "port": 8000,
+    "maxMatches": 10,
+    "maxPlayers": 6
+}
