@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import openSocket from 'socket.io-client';
+import io from 'socket.io-client';
 import config from './config';
 
-const socket = openSocket(config.host);
+const socket = io(config.host);
 
 function MatchSelection() {
     const [socketId, updateSocketId] = useState('');
