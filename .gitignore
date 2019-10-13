@@ -1,2 +1,3 @@
 frontend/src/config.js
+backend/src/config.json
 node_modules
