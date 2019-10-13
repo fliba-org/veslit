@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+
+import { makeStyles } from '@material-ui/core/styles';
+
+import Typography from '@material-ui/core/Typography';
+
 import io from 'socket.io-client';
 import config from './config';
 
@@ -20,7 +25,17 @@ function MatchSelection() {
         updateSocketState({...socketState, createdMatch});
     });
 
+    const classes = makeStyles(theme => ({
+        serverName: {
+            margin: '0.8em auto',
+            textAlign: 'center',
+        },
+    }))();
+
     return (<div>
+        <Typography variant='h2' className={classes.serverName}>
+            {config.serverName}
+        </Typography>
     </div>);
 }
 
