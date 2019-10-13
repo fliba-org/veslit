@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 
+import AddIcon from '@material-ui/icons/Add';
+import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -56,6 +58,10 @@ function MatchSelection() {
             fontSize: '1.5em',
             fontFamily: theme.typography.fontFamily,
         },
+        createMatchButton: {
+            marginTop: '1.5em',
+            padding: '1em',
+        },
     }))();
 
     const matchesEl = <List>
@@ -88,6 +94,14 @@ function MatchSelection() {
         </Typography>
         { socketState.connected ? <div className={classes.matchListWrapper}>
             <Paper className={classes.matchListContainer}> {matchesEl} </Paper>
+            { !socketState.createdMatch ? <Button
+                variant='contained'
+                color='primary'
+                startIcon={<AddIcon />}
+                className={classes.createMatchButton}>
+                    Create match
+                </Button> : null
+            }
             </div> : 'Not connected :('
         }
     </div>);
