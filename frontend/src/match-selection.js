@@ -30,6 +30,16 @@ function MatchSelection() {
         createdMatch: false,
     });
 
+    function handleCreateMatch() {
+        if (socketState.connected) {
+            socket.emit('matchCreation', {
+                name: 'foo',
+                limit: 3,
+                password: '',
+            });
+        }
+    }
+
     socket.on('updateSocketState', s => {
         updateSocketState(s)
     });
@@ -97,6 +107,7 @@ function MatchSelection() {
             { !socketState.createdMatch ? <Button
                 variant='contained'
                 color='primary'
+                onClick={handleCreateMatch}
                 startIcon={<AddIcon />}
                 className={classes.createMatchButton}>
                     Create match
