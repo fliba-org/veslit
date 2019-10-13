@@ -1,4 +1,7 @@
-const io = require('socket.io')(8000);
+import Server from 'socket.io';
+
+const config = require('./config.json');
+const io = new Server(config.port);
 
 io.on('connection', (socket) => {
     console.log('someone connected');
