@@ -49,6 +49,11 @@ function MatchSelection() {
         updateSocketState({...socketState, createdMatch});
     });
 
+    socket.on('matchCreationFailed', msg => {
+        console.log(msg);
+        console.log(matches)
+    });
+
     const classes = makeStyles(theme => ({
         serverName: {
             margin: '0.8em auto',
